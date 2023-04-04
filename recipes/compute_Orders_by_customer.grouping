@@ -1,0 +1,535 @@
+{
+  "preFilter": {
+    "distinct": false,
+    "enabled": false
+  },
+  "keys": [
+    {
+      "countDistinct": false,
+      "min": false,
+      "avg": false,
+      "last": false,
+      "max": false,
+      "column": "customer_id",
+      "count": false,
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "stddev": false,
+      "first": false
+    }
+  ],
+  "values": [
+    {
+      "last": false,
+      "max": false,
+      "count": false,
+      "column": "order_date",
+      "$idx": 0,
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "sum2": false,
+      "min": false,
+      "countDistinct": false,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "count": false,
+      "column": "order_date_year",
+      "$idx": 1,
+      "sum": false,
+      "concat": false,
+      "type": "bigint",
+      "sum2": false,
+      "min": false,
+      "countDistinct": true,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "count": false,
+      "column": "order_date_month",
+      "$idx": 2,
+      "sum": false,
+      "concat": false,
+      "type": "bigint",
+      "sum2": false,
+      "min": false,
+      "countDistinct": true,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "count": false,
+      "column": "order_week_of_year",
+      "$idx": 3,
+      "sum": false,
+      "concat": false,
+      "type": "bigint",
+      "sum2": false,
+      "min": false,
+      "countDistinct": false,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "count": false,
+      "column": "order_date_day",
+      "$idx": 4,
+      "sum": false,
+      "concat": false,
+      "type": "bigint",
+      "sum2": false,
+      "min": false,
+      "countDistinct": false,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "count": false,
+      "column": "order_day_of_week",
+      "$idx": 5,
+      "sum": false,
+      "concat": false,
+      "type": "bigint",
+      "sum2": false,
+      "min": false,
+      "countDistinct": true,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "count": false,
+      "column": "pages_visited",
+      "$idx": 6,
+      "sum": false,
+      "concat": false,
+      "type": "bigint",
+      "sum2": false,
+      "min": false,
+      "countDistinct": false,
+      "avg": true,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "count": false,
+      "column": "order_id",
+      "$idx": 7,
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "sum2": false,
+      "min": false,
+      "countDistinct": false,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "count": false,
+      "column": "order_number",
+      "$idx": 8,
+      "sum": false,
+      "concat": false,
+      "type": "bigint",
+      "sum2": false,
+      "min": false,
+      "countDistinct": false,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "count": false,
+      "column": "tshirt_category",
+      "$idx": 9,
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "sum2": false,
+      "min": false,
+      "countDistinct": false,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "count": false,
+      "column": "total",
+      "$idx": 10,
+      "sum": true,
+      "concat": false,
+      "type": "double",
+      "sum2": false,
+      "min": false,
+      "countDistinct": false,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "count": false,
+      "column": "gender",
+      "$idx": 11,
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "sum2": false,
+      "min": true,
+      "countDistinct": false,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "count": false,
+      "column": "birthdate",
+      "$idx": 12,
+      "sum": false,
+      "concat": false,
+      "type": "date",
+      "sum2": false,
+      "min": false,
+      "countDistinct": false,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "count": false,
+      "column": "age",
+      "$idx": 13,
+      "sum": false,
+      "concat": false,
+      "type": "bigint",
+      "sum2": false,
+      "min": true,
+      "countDistinct": false,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "count": false,
+      "column": "user_agent_brand",
+      "$idx": 14,
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "sum2": false,
+      "min": true,
+      "countDistinct": false,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "count": false,
+      "column": "user_agent_os",
+      "$idx": 15,
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "sum2": false,
+      "min": true,
+      "countDistinct": false,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "count": false,
+      "column": "user_agent_osversion",
+      "$idx": 16,
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "sum2": false,
+      "min": true,
+      "countDistinct": false,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "count": false,
+      "column": "user_agent_osflavor",
+      "$idx": 17,
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "sum2": false,
+      "min": true,
+      "countDistinct": false,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "count": false,
+      "column": "ip_address",
+      "$idx": 18,
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "sum2": false,
+      "min": false,
+      "countDistinct": false,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "count": false,
+      "column": "ip_address_geopoint",
+      "$idx": 19,
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "sum2": false,
+      "min": true,
+      "countDistinct": false,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "count": false,
+      "column": "ip_address_city",
+      "$idx": 20,
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "sum2": false,
+      "min": true,
+      "countDistinct": false,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "count": false,
+      "column": "ip_address_country",
+      "$idx": 21,
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "sum2": false,
+      "min": true,
+      "countDistinct": false,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "count": false,
+      "column": "campaign",
+      "$idx": 22,
+      "sum": false,
+      "concat": false,
+      "type": "boolean",
+      "sum2": false,
+      "min": true,
+      "countDistinct": false,
+      "avg": false,
+      "stddev": false,
+      "first": false
+    },
+    {
+      "last": false,
+      "max": false,
+      "column": "dataset",
+      "count": false,
+      "$idx": 23,
+      "sum": false,
+      "concat": false,
+      "type": "string",
+      "countDistinct": false,
+      "min": true,
+      "avg": false,
+      "$selected": false,
+      "stddev": false,
+      "first": false
+    }
+  ],
+  "engineParams": {
+    "hive": {
+      "skipPrerunValidate": false,
+      "hiveconf": [],
+      "inheritConf": "default",
+      "addDkuUdf": false,
+      "executionEngine": "HIVECLI_LOCAL"
+    },
+    "impala": {
+      "forceStreamMode": true
+    },
+    "lowerCaseSchemaIfEngineRequiresIt": true,
+    "sparkSQL": {
+      "pipelineAllowMerge": true,
+      "pipelineAllowStart": true,
+      "useGlobalMetastore": false,
+      "readParams": {
+        "map": {}
+      },
+      "overwriteOutputSchema": false,
+      "sparkConfig": {
+        "inheritConf": "default",
+        "conf": []
+      }
+    }
+  },
+  "globalCount": true,
+  "enlargeYourBits": true,
+  "outputColumnNameOverrides": {
+    "user_agent_os_min": "user_agent_os",
+    "user_agent_osflavor_min": "user_agent_osflavor",
+    "ip_address_city_min": "ip_address_city",
+    "user_agent_osversion_min": "user_agent_osversion",
+    "original_dataset_min": "original_dataset",
+    "dataset_min": "dataset",
+    "user_agent_brand_min": "user_agent_brand",
+    "age_min": "age_first_order",
+    "ip_address_geopoint_min": "ip_address_geopoint",
+    "campaign_min": "campaign",
+    "gender_min": "gender",
+    "ip_address_country_min": "ip_address_country"
+  },
+  "postFilter": {
+    "$status": {
+      "schema": {
+        "columns": [
+          {
+            "meaning": "Text",
+            "name": "customer_id",
+            "type": "string"
+          },
+          {
+            "name": "order_date_year_distinct",
+            "type": "bigint"
+          },
+          {
+            "name": "order_date_month_distinct",
+            "type": "bigint"
+          },
+          {
+            "name": "order_day_of_week_distinct",
+            "type": "bigint"
+          },
+          {
+            "name": "pages_visited_avg",
+            "type": "double"
+          },
+          {
+            "name": "total_sum",
+            "type": "double"
+          },
+          {
+            "name": "gender_min",
+            "type": "string"
+          },
+          {
+            "name": "age_min",
+            "type": "bigint"
+          },
+          {
+            "name": "user_agent_brand_min",
+            "type": "string"
+          },
+          {
+            "name": "user_agent_os_min",
+            "type": "string"
+          },
+          {
+            "name": "user_agent_osversion_min",
+            "type": "string"
+          },
+          {
+            "name": "user_agent_osflavor_min",
+            "type": "string"
+          },
+          {
+            "name": "ip_address_geopoint_min",
+            "type": "string"
+          },
+          {
+            "name": "ip_address_city_min",
+            "type": "string"
+          },
+          {
+            "name": "ip_address_country_min",
+            "type": "string"
+          },
+          {
+            "name": "campaign_min",
+            "type": "boolean"
+          },
+          {
+            "name": "dataset_min",
+            "type": "string"
+          },
+          {
+            "name": "count",
+            "type": "bigint"
+          }
+        ],
+        "userModified": false
+      }
+    },
+    "distinct": false,
+    "enabled": false
+  },
+  "computedColumns": []
+}

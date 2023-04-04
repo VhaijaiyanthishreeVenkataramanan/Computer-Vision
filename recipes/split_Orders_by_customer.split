@@ -1,0 +1,183 @@
+{
+  "centileShuffle": false,
+  "centileSplits": [
+    {
+      "outputIndex": 0,
+      "share": 50
+    }
+  ],
+  "preFilter": {
+    "distinct": false,
+    "enabled": false
+  },
+  "defaultOutputIndex": 1,
+  "seed": 1337,
+  "randomColumns": [],
+  "centileOrders": [],
+  "rangeSetTime": false,
+  "column": "dataset",
+  "randomSplits": [
+    {
+      "outputIndex": 0,
+      "share": 50
+    }
+  ],
+  "randomColumnsSplits": [
+    {
+      "outputIndex": 0,
+      "share": 50
+    }
+  ],
+  "computedColumns": [],
+  "writeComputedColumnsInOutput": false,
+  "mode": "VALUES",
+  "centileTDigest": false,
+  "valueSplits": [
+    {
+      "outputIndex": 0,
+      "caseSensitive": false,
+      "value": "training"
+    }
+  ],
+  "rangeSplits": [
+    {
+      "filter": {
+        "uiData": {
+          "mode": "\u0026\u0026",
+          "conditions": []
+        },
+        "distinct": false,
+        "enabled": true
+      },
+      "outputIndex": 0
+    }
+  ],
+  "engineParams": {
+    "hive": {
+      "skipPrerunValidate": false,
+      "hiveconf": [],
+      "inheritConf": "default",
+      "addDkuUdf": false,
+      "executionEngine": "HIVECLI_LOCAL"
+    },
+    "sqlPipelineParams": {
+      "pipelineAllowMerge": true,
+      "pipelineAllowStart": true
+    },
+    "impala": {
+      "forceStreamMode": true
+    },
+    "lowerCaseSchemaIfEngineRequiresIt": true,
+    "sparkSQL": {
+      "skipPrerunValidate": false,
+      "pipelineAllowMerge": true,
+      "useGlobalMetastore": false,
+      "pipelineAllowStart": true,
+      "readParams": {
+        "mode": "AUTO",
+        "autoModeRepartitionInto": 10,
+        "map": {}
+      },
+      "overwriteOutputSchema": false,
+      "executionEngine": "SPARK_SUBMIT",
+      "sparkConfig": {
+        "inheritConf": "default",
+        "conf": []
+      }
+    }
+  },
+  "filterSplits": [
+    {
+      "filter": {
+        "uiData": {
+          "mode": "\u0026\u0026",
+          "conditions": []
+        },
+        "$status": {
+          "schema": {
+            "columns": [
+              {
+                "meaning": "Text",
+                "name": "customer_id",
+                "type": "string"
+              },
+              {
+                "name": "order_date_year_distinct",
+                "type": "bigint"
+              },
+              {
+                "meaning": "Text",
+                "name": "order_date_month_distinct",
+                "type": "bigint"
+              },
+              {
+                "meaning": "DoubleMeaning",
+                "name": "order_day_of_week_distinct",
+                "type": "bigint"
+              },
+              {
+                "name": "pages_visited_avg",
+                "type": "double"
+              },
+              {
+                "name": "total_sum",
+                "type": "double"
+              },
+              {
+                "name": "gender",
+                "type": "string"
+              },
+              {
+                "name": "age_first_order",
+                "type": "bigint"
+              },
+              {
+                "name": "user_agent_brand",
+                "type": "string"
+              },
+              {
+                "name": "user_agent_os",
+                "type": "string"
+              },
+              {
+                "name": "user_agent_osversion",
+                "type": "string"
+              },
+              {
+                "name": "user_agent_osflavor",
+                "type": "string"
+              },
+              {
+                "name": "ip_address_geopoint",
+                "type": "string"
+              },
+              {
+                "name": "ip_address_city",
+                "type": "string"
+              },
+              {
+                "name": "ip_address_country",
+                "type": "string"
+              },
+              {
+                "name": "campaign",
+                "type": "boolean"
+              },
+              {
+                "name": "dataset",
+                "type": "string"
+              },
+              {
+                "name": "count",
+                "type": "bigint"
+              }
+            ]
+          }
+        },
+        "distinct": false,
+        "enabled": true
+      },
+      "outputIndex": 0
+    }
+  ]
+}

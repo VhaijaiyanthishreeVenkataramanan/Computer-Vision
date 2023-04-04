@@ -1,0 +1,130 @@
+{
+  "inputDatasetSmartName": "training",
+  "script": {
+    "steps": [
+      {
+        "type": "CreateColumnWithGREL",
+        "params": {
+          "column": "high_revenue",
+          "expression": "if(total_sum\u003e300,\"True\",\"False\")"
+        },
+        "metaType": "PROCESSOR",
+        "preview": false,
+        "disabled": false,
+        "alwaysShowComment": false
+      },
+      {
+        "type": "ColumnsSelector",
+        "params": {
+          "keep": false,
+          "appliesTo": "COLUMNS",
+          "columns": [
+            "total_sum",
+            "dataset",
+            "count"
+          ]
+        },
+        "metaType": "PROCESSOR",
+        "preview": false,
+        "disabled": false,
+        "alwaysShowComment": false
+      }
+    ],
+    "maxProcessedMemTableBytes": -1,
+    "columnsSelection": {
+      "mode": "ALL"
+    },
+    "columnWidthsByName": {
+      "customer_id": 100,
+      "order_date_year_distinct": 195,
+      "order_date_month_distinct": 203,
+      "order_day_of_week_distinct": 210,
+      "pages_visited_avg": 143,
+      "total_sum": 100,
+      "gender": 100,
+      "age_first_order": 128,
+      "user_agent_brand": 135,
+      "user_agent_os": 113,
+      "user_agent_osversion": 165,
+      "user_agent_osflavor": 158,
+      "ip_address_geopoint": 183,
+      "ip_address_city": 183,
+      "ip_address_country": 169,
+      "campaign": 100,
+      "dataset": 100,
+      "count": 100,
+      "high_revenue": 105
+    },
+    "coloring": {
+      "scheme": "MEANING_AND_STATUS",
+      "individualColumns": [],
+      "valueColoringMode": "HASH"
+    },
+    "sorting": [],
+    "analysisColumnData": {
+      "order_date_month_distinct": {
+        "meaning": "Text"
+      },
+      "customer_id": {
+        "meaning": "Text"
+      },
+      "order_day_of_week_distinct": {
+        "meaning": "DoubleMeaning"
+      }
+    },
+    "explorationSampling": {
+      "selection": {
+        "maxStoredBytes": 104857600,
+        "timeout": -1,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "vizSampling": {
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "exploreUIParams": {
+      "autoRefresh": true
+    },
+    "globalSearchQuery": "",
+    "explorationFilters": [],
+    "previewMode": "ALL_ROWS"
+  },
+  "charts": [],
+  "name": "Analyze training",
+  "versionTag": {
+    "versionNumber": 5,
+    "lastModifiedBy": {
+      "login": "alex"
+    },
+    "lastModifiedOn": 1616703760905
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "alex"
+    },
+    "lastModifiedOn": 1616703250360
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "checklists": {
+    "checklists": []
+  },
+  "creationTag": {
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1510696909628,
+    "versionNumber": 0
+  },
+  "dashboardCreationId": "E68E1sA",
+  "listed": false,
+  "name": "Total sales by month and T-shirt category on Orders_enriched_prepared",
+  "owner": "admin",
+  "params": {
+    "datasetSmartName": "Orders_enriched_prepared",
+    "def": {
+      "animationDimension": [
+        {
+          "column": "order_date_year",
+          "filters": [],
+          "generateOthersCategory": true,
+          "isA": "dimension",
+          "maxValues": 100,
+          "numParams": {
+            "binSize": 100,
+            "emptyBinsMode": "ZEROS",
+            "mode": "NONE",
+            "nbBins": 30
+          },
+          "oneTickPerBin": false,
+          "possibleSorts": [
+            {
+              "label": "Natural ordering",
+              "sortAscending": true,
+              "type": "NATURAL"
+            },
+            {
+              "label": "Sum of total, descending",
+              "measureIdx": 0,
+              "type": "AGGREGATION"
+            },
+            {
+              "label": "Sum of total, ascending",
+              "measureIdx": 0,
+              "sortAscending": true,
+              "type": "AGGREGATION"
+            }
+          ],
+          "sort": {
+            "label": "Natural ordering",
+            "sortAscending": true,
+            "type": "NATURAL"
+          },
+          "type": "NUMERICAL"
+        }
+      ],
+      "animationFrameDuration": 500,
+      "animationRepeat": true,
+      "axis1LogScale": false,
+      "axis2LogScale": false,
+      "boxplotBreakdownDim": [],
+      "boxplotValue": [],
+      "bubblesOptions": {
+        "defaultRadius": 5.0,
+        "singleShape": "FILLED_CIRCLE"
+      },
+      "chartHeight": 185,
+      "colorMeasure": [],
+      "colorOptions": {
+        "ccScaleMode": "NORMAL",
+        "colorPalette": "default",
+        "customPalette": {
+          "colors": [],
+          "fixedValues": false,
+          "id": "__dku_custom__",
+          "name": "Custom Palette",
+          "values": []
+        },
+        "numQuantizeSteps": 5,
+        "paletteMiddleValue": 0.0,
+        "paletteType": "CONTINUOUS",
+        "quantizationMode": "NONE",
+        "singleColor": "#2678B1",
+        "transparency": 0.75
+      },
+      "computeMode": "NORMAL",
+      "disableSafetyLimits": false,
+      "facetDimension": [
+        {
+          "column": "gender",
+          "filters": [],
+          "generateOthersCategory": true,
+          "isA": "dimension",
+          "maxValues": 20,
+          "numParams": {
+            "emptyBinsMode": "ZEROS"
+          },
+          "oneTickPerBin": false,
+          "possibleSorts": [
+            {
+              "label": "Natural ordering",
+              "sortAscending": true,
+              "type": "NATURAL"
+            },
+            {
+              "label": "Sum of total, descending",
+              "measureIdx": 0,
+              "type": "AGGREGATION"
+            },
+            {
+              "label": "Sum of total, ascending",
+              "measureIdx": 0,
+              "sortAscending": true,
+              "type": "AGGREGATION"
+            }
+          ],
+          "sort": {
+            "label": "Sum of total, descending",
+            "measureIdx": 0,
+            "type": "AGGREGATION"
+          },
+          "type": "ALPHANUM"
+        }
+      ],
+      "fillOpacity": 0.6,
+      "filters": [
+        {
+          "allValuesInSample": false,
+          "column": "age",
+          "columnType": "NUMERICAL",
+          "excludeOtherValues": false,
+          "excludedValues": {},
+          "explicitExclude": false,
+          "filterType": "NUMERICAL_FACET",
+          "isA": "filter",
+          "minValue": 20.0
+        }
+      ],
+      "genericDimension0": [
+        {
+          "column": "order_date_month",
+          "filters": [],
+          "generateOthersCategory": true,
+          "isA": "dimension",
+          "maxValues": 100,
+          "numParams": {
+            "binSize": 100,
+            "emptyBinsMode": "ZEROS",
+            "mode": "NONE",
+            "nbBins": 30
+          },
+          "oneTickPerBin": false,
+          "possibleSorts": [
+            {
+              "label": "Natural ordering",
+              "sortAscending": true,
+              "type": "NATURAL"
+            },
+            {
+              "label": "Sum of total, descending",
+              "measureIdx": 0,
+              "type": "AGGREGATION"
+            },
+            {
+              "label": "Sum of total, ascending",
+              "measureIdx": 0,
+              "sortAscending": true,
+              "type": "AGGREGATION"
+            }
+          ],
+          "sort": {
+            "label": "Natural ordering",
+            "sortAscending": true,
+            "type": "NATURAL"
+          },
+          "type": "NUMERICAL"
+        }
+      ],
+      "genericDimension1": [
+        {
+          "column": "tshirt_category",
+          "filters": [],
+          "generateOthersCategory": true,
+          "isA": "dimension",
+          "maxValues": 20,
+          "numParams": {
+            "emptyBinsMode": "ZEROS"
+          },
+          "oneTickPerBin": false,
+          "possibleSorts": [
+            {
+              "label": "Natural ordering",
+              "sortAscending": true,
+              "type": "NATURAL"
+            },
+            {
+              "label": "Sum of total, descending",
+              "measureIdx": 0,
+              "type": "AGGREGATION"
+            },
+            {
+              "label": "Sum of total, ascending",
+              "measureIdx": 0,
+              "sortAscending": true,
+              "type": "AGGREGATION"
+            }
+          ],
+          "sort": {
+            "label": "Sum of total, descending",
+            "measureIdx": 0,
+            "type": "AGGREGATION"
+          },
+          "type": "ALPHANUM"
+        }
+      ],
+      "genericMeasures": [
+        {
+          "column": "total",
+          "computeMode": "NORMAL",
+          "computeModeDim": 0,
+          "displayAxis": "axis1",
+          "displayType": "column",
+          "displayed": true,
+          "function": "SUM",
+          "isA": "measure",
+          "type": "NUMERICAL"
+        }
+      ],
+      "geometry": [],
+      "groupDimension": [],
+      "hexbinNumber": 20,
+      "hexbinRadius": 20,
+      "hexbinRadiusMode": "NUM_HEXAGONS",
+      "includeZero": true,
+      "legendPlacement": "OUTER_RIGHT",
+      "mapGridOptions": {
+        "gridLatDeg": 0.5,
+        "gridLonDeg": 0.5
+      },
+      "mapOptions": {
+        "lockSquareGrid": false,
+        "tilesLayer": "cartodb-positron"
+      },
+      "multiTooltips": false,
+      "name": "Total sales by month and T-shirt category",
+      "pieOptions": {
+        "donutHoleSize": 54.0
+      },
+      "scatterOptions": {
+        "equalScales": false,
+        "identityLine": false
+      },
+      "showInChartLabels": true,
+      "showInChartValues": false,
+      "showLegend": true,
+      "showXAxis": false,
+      "showXAxisLabel": true,
+      "showYAxisLabel": true,
+      "singleXAxis": true,
+      "sizeMeasure": [],
+      "smoothing": true,
+      "strokeWidth": 1,
+      "tooltipMeasures": [],
+      "type": "lines",
+      "uaColor": [],
+      "uaShape": [],
+      "uaSize": [],
+      "uaTooltip": [],
+      "uaXDimension": [],
+      "uaYDimension": [],
+      "useLiveProcessingIfAvailable": true,
+      "userEditedName": true,
+      "variant": "normal",
+      "xAxisMode": "NORMAL",
+      "xDimension": [],
+      "xMeasure": [],
+      "yAxisMode": "NORMAL",
+      "yDimension": [],
+      "yMeasure": []
+    },
+    "engineType": "LINO",
+    "maxDataBytes": 157286400,
+    "refreshableSelection": {
+      "_refreshTrigger": 0,
+      "autoRefreshSample": false,
+      "selection": {
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "latestPartitionsN": 1,
+        "maxReadUncompressedBytes": -1,
+        "maxRecords": 10000,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "partitionSelectionMethod": "ALL",
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "targetRatio": 0.02,
+        "useMemTable": false,
+        "withinFirstN": -1
+      }
+    }
+  },
+  "tags": [],
+  "type": "chart",
+  "versionTag": {
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1510696909628,
+    "versionNumber": 0
+  }
+}

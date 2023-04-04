@@ -1,0 +1,64 @@
+---
+title: "Haiku T-Shirt Analytics"
+author: "Dataiku Learn"
+date: "`r format(Sys.Date())`"
+output:
+    pdf_document:
+        toc: true
+---
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+# Pull the necessary libraries
+library(dataiku)
+library(magrittr)
+library(ggplot2)
+library(dplyr)
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+# Read the Dataiku dataset we want to use 
+df <- dkuReadDataset("Orders_by_customer", samplingMethod="head", nbRows=1000000)
+```
+
+This report is prepared for the executives of the Haiku T-Shirt company to apprise them of the current state of customer analytics. 
+
+## Customers by Country
+
+The following bar chart shows that:
+
+- the United States is our largest market
+- the agglomeration of all other countries where we have fewer than 100 customers accounts for more business than any other single market
+- China is the next largest market
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+df %>% 
+    count(ip_address_country) %>%
+    filter(n>=100) -> country_count
+
+df %>% 
+    count(ip_address_country) %>%
+    filter(n<100) %>% 
+    summarize(ip_address_country="Others",n=sum(n))%>%
+    bind_rows(country_count) -> country_count
+
+country_count$ip_address_country[is.na(country_count$ip_address_country)] <- "Unknown"
+country_count$ip_address_country <- factor(country_count$ip_address_country, levels=country_count$ip_address_country[order(country_count$n)])
+
+country_count %>%
+    ggplot(aes(ip_address_country,n,fill=n)) + geom_bar(stat="identity") + coord_flip()
+
+```
+    
+
+## Customer Lifetime Spending
+
+A quick look at the amount spent by customers shows that those targeted by the company's marketing campaign tend to spend much more than those who aren't.  There does not appear to be a significant difference between genders.
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+df %>% 
+    ggplot(aes(campaign, total_sum,fill=gender)) + geom_bar(stat="summary",fun.y="mean",position="dodge") +
+    scale_y_continuous(name="Customer lifetime spending")
+```
+
+
+

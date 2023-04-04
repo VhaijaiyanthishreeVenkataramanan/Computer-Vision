@@ -1,0 +1,320 @@
+{
+  "columnsSelection": {
+    "mode": "ALL"
+  },
+  "explorationSampling": {
+    "_refreshTrigger": 0,
+    "selection": {
+      "filter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "latestPartitionsN": 1,
+      "maxRecords": 10000,
+      "ordering": {
+        "rules": [],
+        "enabled": false
+      },
+      "withinFirstN": -1,
+      "partitionSelectionMethod": "ALL",
+      "maxStoredBytes": 104857600,
+      "targetRatio": 0.02,
+      "maxReadUncompressedBytes": -1,
+      "samplingMethod": "HEAD_SEQUENTIAL",
+      "timeout": -1
+    },
+    "autoRefreshSample": false
+  },
+  "explorationFilters": [],
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "FindReplace",
+      "params": {
+        "output": "",
+        "mapping": [
+          {
+            "from": "Wh Tshirt M",
+            "to": "White T-Shirt M"
+          },
+          {
+            "from": "Bl Tshirt M",
+            "to": "Black T-Shirt M"
+          },
+          {
+            "from": "Wh Tshirt F",
+            "to": "White T-Shirt F"
+          },
+          {
+            "from": "Bl Tshirt F",
+            "to": "White T-Shirt F"
+          }
+        ],
+        "normalization": "EXACT",
+        "columns": [
+          "tshirt_category"
+        ],
+        "appliesTo": "SINGLE_COLUMN",
+        "stopAfterFirstMatch": false,
+        "matching": "FULL_STRING"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "DateParser",
+      "params": {
+        "outCol": "",
+        "formats": [
+          "yyyy/HH/mm"
+        ],
+        "columns": [
+          "birthdate"
+        ],
+        "timezone_id": "UTC",
+        "appliesTo": "SINGLE_COLUMN",
+        "lang": "auto"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "UserAgentClassifier",
+      "params": {
+        "column": "user_agent"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnsSelector",
+      "params": {
+        "columns": [
+          "user_agent_version",
+          "user_agent_category",
+          "user_agent_type",
+          "user_agent"
+        ],
+        "keep": false,
+        "appliesTo": "COLUMNS"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "GeoIPResolver",
+      "params": {
+        "inCol": "ip_address",
+        "extract_country": true,
+        "extract_countrycode3": false,
+        "extract_city": true,
+        "extract_latlng": false,
+        "extract_countrycode": false,
+        "extract_postalcode": false,
+        "extract_timezone": false,
+        "outColPrefix": "ip_address_",
+        "extract_continentcode": false,
+        "extract_region": false,
+        "extract_geopoint": true
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "DateParser",
+      "params": {
+        "outCol": "",
+        "formats": [
+          "yyyy/MM/dd"
+        ],
+        "columns": [
+          "order_date"
+        ],
+        "timezone_id": "UTC",
+        "appliesTo": "SINGLE_COLUMN",
+        "lang": "auto"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "designTimeReport": {
+        "report": {
+          "createdColumnCount": 2
+        }
+      },
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnSplitter",
+      "params": {
+        "inCol": "order_id",
+        "keepEmptyChunks": false,
+        "limit": 0,
+        "separator": "-",
+        "outColPrefix": "order_id_",
+        "limitOutput": false,
+        "target": "COLUMNS"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnsSelector",
+      "params": {
+        "columns": [
+          "order_id_0"
+        ],
+        "keep": false,
+        "appliesTo": "COLUMNS"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnRenamer",
+      "params": {
+        "renamings": [
+          {
+            "from": "order_id_1",
+            "to": "order_number"
+          }
+        ]
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "DateComponentsExtractor",
+      "params": {
+        "outMonthColumn": "order_date_month",
+        "outYearColumn": "order_date_year",
+        "outWeekYearColumn": "",
+        "column": "order_date",
+        "outDayOfWeekColumn": "order_day_of_week",
+        "timezone_id": "UTC",
+        "outDayColumn": "order_date_day",
+        "outWeekOfYearColumn": "order_week_of_year"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "CreateColumnWithGREL",
+      "params": {
+        "expression": "tshirt_quantity * tshirt_price",
+        "column": "total"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnsSelector",
+      "params": {
+        "columns": [
+          "tshirt_price",
+          "tshirt_quantity"
+        ],
+        "keep": false,
+        "appliesTo": "COLUMNS"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "DateDifference",
+      "params": {
+        "output": "age",
+        "input2": "order_date",
+        "outputUnit": "YEARS",
+        "input1": "birthdate",
+        "compareTo": "COLUMN",
+        "reverse": false
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "MinMaxProcessor",
+      "params": {
+        "upperBound": "102.0",
+        "columns": [
+          "age"
+        ],
+        "clear": true,
+        "lowerBound": "14.00"
+      },
+      "alwaysShowComment": false
+    }
+  ],
+  "maxProcessedMemTableBytes": -1,
+  "previewMode": "ALL_ROWS",
+  "vizSampling": {
+    "_refreshTrigger": 0,
+    "autoRefreshSample": false
+  },
+  "analysisColumnData": {},
+  "columnWidthsByName": {
+    "order_date_day": 120,
+    "ip_address_geopoint": 183,
+    "birthdate": 183,
+    "gender": 100,
+    "user_agent_os": 113,
+    "ip_address_country": 169,
+    "order_number": 105,
+    "order_date_year": 128,
+    "order_date_month": 135,
+    "pages_visited": 113,
+    "total": 100,
+    "user_agent_osflavor": 158,
+    "user_agent_osversion": 165,
+    "user_agent_brand": 135,
+    "ip_address": 120,
+    "tshirt_category": 155,
+    "order_date": 183,
+    "ip_address_city": 183,
+    "order_day_of_week": 143,
+    "order_week_of_year": 150,
+    "campaign": 100,
+    "customer_id": 100,
+    "order_id": 106,
+    "dataset": 100,
+    "age": 100
+  },
+  "sorting": [],
+  "globalSearchQuery": "",
+  "coloring": {
+    "scheme": "MEANING_AND_STATUS",
+    "individualColumns": [],
+    "valueColoringMode": "HASH"
+  }
+}

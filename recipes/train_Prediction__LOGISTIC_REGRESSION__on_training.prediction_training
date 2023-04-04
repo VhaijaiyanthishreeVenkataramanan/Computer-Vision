@@ -1,0 +1,830 @@
+{
+    "generatingModelId": "A-DKU_HAIKU_STARTER-EVay9EtQ-58YQqY0Z-s2-pp2-m1",
+    "partSource": "ACTIVE_VERSION",
+    "script": {
+        "maxProcessedMemTableBytes": -1,
+        "sorting": [],
+        "columnsSelection": {
+            "mode": "ALL"
+        },
+        "columnWidthsByName": {
+            "count": 100,
+            "ip_address_geopoint": 183,
+            "customer_id": 100,
+            "user_agent_brand": 135,
+            "user_agent_os": 113,
+            "campaign": 100,
+            "total_sum": 100,
+            "user_agent_osversion": 165,
+            "gender": 100,
+            "user_agent_osflavor": 158,
+            "age_first_order": 128,
+            "dataset": 100,
+            "high_revenue": 105,
+            "ip_address_city": 183,
+            "order_date_year_distinct": 195,
+            "order_day_of_week_distinct": 210,
+            "order_date_month_distinct": 203,
+            "ip_address_country": 169,
+            "pages_visited_avg": 143
+        },
+        "analysisColumnData": {
+            "order_day_of_week_distinct": {
+                "meaning": "DoubleMeaning"
+            },
+            "order_date_month_distinct": {
+                "meaning": "Text"
+            },
+            "customer_id": {
+                "meaning": "Text"
+            }
+        },
+        "exploreUIParams": {
+            "autoRefresh": true
+        },
+        "vizSampling": {
+            "autoRefreshSample": false,
+            "_refreshTrigger": 0
+        },
+        "coloring": {
+            "scheme": "MEANING_AND_STATUS",
+            "valueColoringMode": "HASH",
+            "individualColumns": []
+        },
+        "steps": [
+            {
+                "metaType": "PROCESSOR",
+                "alwaysShowComment": false,
+                "disabled": false,
+                "params": {
+                    "column": "high_revenue",
+                    "expression": "if(total_sum>300,\"True\",\"False\")"
+                },
+                "preview": false,
+                "type": "CreateColumnWithGREL"
+            },
+            {
+                "metaType": "PROCESSOR",
+                "alwaysShowComment": false,
+                "disabled": false,
+                "params": {
+                    "appliesTo": "COLUMNS",
+                    "columns": [
+                        "total_sum",
+                        "dataset",
+                        "count"
+                    ],
+                    "keep": false
+                },
+                "preview": false,
+                "type": "ColumnsSelector"
+            }
+        ],
+        "globalSearchQuery": "",
+        "previewMode": "ALL_ROWS",
+        "explorationSampling": {
+            "autoRefreshSample": false,
+            "selection": {
+                "targetRatio": 0.02,
+                "maxReadUncompressedBytes": -1,
+                "ordering": {
+                    "rules": [],
+                    "enabled": false
+                },
+                "latestPartitionsN": 1,
+                "filter": {
+                    "distinct": false,
+                    "enabled": false
+                },
+                "withinFirstN": -1,
+                "maxRecords": 10000,
+                "partitionSelectionMethod": "ALL",
+                "timeout": -1,
+                "maxStoredBytes": 104857600,
+                "samplingMethod": "HEAD_SEQUENTIAL"
+            },
+            "_refreshTrigger": 0
+        },
+        "explorationFilters": []
+    },
+    "assertionsParams": {
+        "assertions": []
+    },
+    "backendType": "PY_MEMORY",
+    "sparkParams": {
+        "sparkUseGlobalMetastore": false,
+        "sparkExecutionEngine": "SPARK_SUBMIT",
+        "sparkPreparedDFStorageLevel": "MEMORY_AND_DISK",
+        "pipelineAllowStart": true,
+        "pipelineAllowMerge": true,
+        "sparkConf": {
+            "inheritConf": "default",
+            "conf": []
+        },
+        "sparkRepartitionNonHDFS": 1
+    },
+    "preprocessing": {
+        "preprocessingFitSampleSeed": 1337,
+        "feature_selection_params": {
+            "custom_params": {
+                "code": "# type your code here"
+            },
+            "pca_params": {
+                "variance_proportion": 0.9,
+                "n_features": 25
+            },
+            "random_forest_params": {
+                "depth": 10,
+                "n_features": 25,
+                "n_trees": 30
+            },
+            "lasso_params": {
+                "alpha": [
+                    0.01,
+                    0.1,
+                    1.0,
+                    10.0,
+                    100.0
+                ],
+                "cross_validate": true
+            },
+            "method": "NONE",
+            "correlation_params": {
+                "max_abs_correlation": 1.0,
+                "n_features": 25,
+                "min_abs_correlation": 0.0
+            }
+        },
+        "preprocessingFitSampleRatio": 1.0,
+        "reduce": {
+            "enabled": false,
+            "kept_variance": 0.0
+        },
+        "skipPreprocessing": false,
+        "target_remapping": [
+            {
+                "mappedValue": 0,
+                "sourceValue": "False",
+                "sampleFreq": 9036
+            },
+            {
+                "mappedValue": 1,
+                "sourceValue": "True",
+                "sampleFreq": 964
+            }
+        ],
+        "per_feature": {
+            "ip_address_geopoint": {
+                "missing_impute_with": "MODE",
+                "max_cat_safety": 200,
+                "hash_whole_categories": true,
+                "customHandlingCode": "",
+                "customProcessorWantsMatrix": false,
+                "nb_bins_hashing": 1048576,
+                "sendToInput": "main",
+                "state": {
+                    "userModified": false,
+                    "recordedMeaning": "GeoPoint",
+                    "autoModifiedByDSS": false
+                },
+                "role": "INPUT",
+                "max_nb_categories": 100,
+                "dummy_clip": "MAX_NB_CATEGORIES",
+                "missing_handling": "NONE",
+                "dummy_drop": "DROP",
+                "min_samples": 10,
+                "type": "CATEGORY",
+                "cumulative_proportion": 0.95,
+                "category_handling": "DUMMIFY"
+            },
+            "user_agent_brand": {
+                "missing_impute_with": "MODE",
+                "max_cat_safety": 200,
+                "hash_whole_categories": true,
+                "customHandlingCode": "",
+                "customProcessorWantsMatrix": false,
+                "nb_bins_hashing": 1048576,
+                "sendToInput": "main",
+                "state": {
+                    "userModified": false,
+                    "recordedMeaning": "Text",
+                    "autoModifiedByDSS": false
+                },
+                "role": "INPUT",
+                "max_nb_categories": 100,
+                "dummy_clip": "MAX_NB_CATEGORIES",
+                "missing_handling": "NONE",
+                "dummy_drop": "DROP",
+                "min_samples": 10,
+                "type": "CATEGORY",
+                "cumulative_proportion": 0.95,
+                "category_handling": "DUMMIFY"
+            },
+            "user_agent_os": {
+                "missing_impute_with": "MODE",
+                "max_cat_safety": 200,
+                "hash_whole_categories": true,
+                "customHandlingCode": "",
+                "customProcessorWantsMatrix": false,
+                "nb_bins_hashing": 1048576,
+                "sendToInput": "main",
+                "state": {
+                    "userModified": false,
+                    "recordedMeaning": "Text",
+                    "autoModifiedByDSS": false
+                },
+                "role": "INPUT",
+                "max_nb_categories": 100,
+                "dummy_clip": "MAX_NB_CATEGORIES",
+                "missing_handling": "NONE",
+                "dummy_drop": "DROP",
+                "min_samples": 10,
+                "type": "CATEGORY",
+                "cumulative_proportion": 0.95,
+                "category_handling": "DUMMIFY"
+            },
+            "campaign": {
+                "missing_impute_with": "MODE",
+                "max_cat_safety": 200,
+                "hash_whole_categories": true,
+                "customHandlingCode": "",
+                "customProcessorWantsMatrix": false,
+                "nb_bins_hashing": 1048576,
+                "sendToInput": "main",
+                "state": {
+                    "userModified": false,
+                    "recordedMeaning": "Boolean",
+                    "autoModifiedByDSS": false
+                },
+                "role": "INPUT",
+                "max_nb_categories": 100,
+                "dummy_clip": "MAX_NB_CATEGORIES",
+                "missing_handling": "NONE",
+                "dummy_drop": "DROP",
+                "min_samples": 10,
+                "type": "CATEGORY",
+                "cumulative_proportion": 0.95,
+                "category_handling": "DUMMIFY"
+            },
+            "user_agent_osversion": {
+                "missing_impute_with": "MODE",
+                "max_cat_safety": 200,
+                "hash_whole_categories": true,
+                "customHandlingCode": "",
+                "customProcessorWantsMatrix": false,
+                "nb_bins_hashing": 1048576,
+                "sendToInput": "main",
+                "state": {
+                    "userModified": false,
+                    "recordedMeaning": "Text",
+                    "autoModifiedByDSS": false
+                },
+                "role": "INPUT",
+                "max_nb_categories": 100,
+                "dummy_clip": "MAX_NB_CATEGORIES",
+                "missing_handling": "NONE",
+                "dummy_drop": "DROP",
+                "min_samples": 10,
+                "type": "CATEGORY",
+                "cumulative_proportion": 0.95,
+                "category_handling": "DUMMIFY"
+            },
+            "gender": {
+                "missing_impute_with": "MODE",
+                "max_cat_safety": 200,
+                "hash_whole_categories": true,
+                "customHandlingCode": "",
+                "customProcessorWantsMatrix": false,
+                "nb_bins_hashing": 1048576,
+                "sendToInput": "main",
+                "state": {
+                    "userModified": false,
+                    "recordedMeaning": "Gender",
+                    "autoModifiedByDSS": false
+                },
+                "role": "INPUT",
+                "max_nb_categories": 100,
+                "dummy_clip": "MAX_NB_CATEGORIES",
+                "missing_handling": "NONE",
+                "dummy_drop": "DROP",
+                "min_samples": 10,
+                "type": "CATEGORY",
+                "cumulative_proportion": 0.95,
+                "category_handling": "DUMMIFY"
+            },
+            "user_agent_osflavor": {
+                "missing_impute_with": "MODE",
+                "max_cat_safety": 200,
+                "hash_whole_categories": true,
+                "customHandlingCode": "",
+                "customProcessorWantsMatrix": false,
+                "nb_bins_hashing": 1048576,
+                "sendToInput": "main",
+                "state": {
+                    "userModified": false,
+                    "recordedMeaning": "Text",
+                    "autoModifiedByDSS": false
+                },
+                "role": "INPUT",
+                "max_nb_categories": 100,
+                "dummy_clip": "MAX_NB_CATEGORIES",
+                "missing_handling": "NONE",
+                "dummy_drop": "DROP",
+                "min_samples": 10,
+                "type": "CATEGORY",
+                "cumulative_proportion": 0.95,
+                "category_handling": "DUMMIFY"
+            },
+            "age_first_order": {
+                "generate_derivative": false,
+                "numerical_handling": "REGULAR",
+                "missing_impute_with": "MEAN",
+                "missing_handling": "IMPUTE",
+                "customHandlingCode": "",
+                "customProcessorWantsMatrix": false,
+                "sendToInput": "main",
+                "binarize_threshold_mode": "MEDIAN",
+                "state": {
+                    "userModified": false,
+                    "recordedMeaning": "LongMeaning",
+                    "autoModifiedByDSS": false
+                },
+                "role": "INPUT",
+                "binarize_constant_threshold": 0.0,
+                "quantile_bin_nb_bins": 4,
+                "rescaling": "AVGSTD",
+                "type": "NUMERIC",
+                "impute_constant_value": 0.0
+            },
+            "ip_address_country": {
+                "missing_impute_with": "MODE",
+                "max_cat_safety": 200,
+                "hash_whole_categories": true,
+                "customHandlingCode": "",
+                "customProcessorWantsMatrix": false,
+                "nb_bins_hashing": 1048576,
+                "sendToInput": "main",
+                "state": {
+                    "userModified": false,
+                    "recordedMeaning": "CountryMeaning",
+                    "autoModifiedByDSS": false
+                },
+                "role": "INPUT",
+                "max_nb_categories": 100,
+                "dummy_clip": "MAX_NB_CATEGORIES",
+                "missing_handling": "NONE",
+                "dummy_drop": "DROP",
+                "min_samples": 10,
+                "type": "CATEGORY",
+                "cumulative_proportion": 0.95,
+                "category_handling": "DUMMIFY"
+            },
+            "high_revenue": {
+                "hash_whole_categories": true,
+                "nb_bins_hashing": 1048576,
+                "customHandlingCode": "",
+                "customProcessorWantsMatrix": false,
+                "cumulative_proportion": 0.95,
+                "sendToInput": "main",
+                "state": {
+                    "userModified": false,
+                    "recordedMeaning": "Boolean",
+                    "autoModifiedByDSS": false
+                },
+                "role": "TARGET",
+                "max_nb_categories": 100,
+                "dummy_clip": "MAX_NB_CATEGORIES",
+                "dummy_drop": "NONE",
+                "min_samples": 10,
+                "type": "CATEGORY",
+                "max_cat_safety": 200
+            },
+            "ip_address_city": {
+                "missing_impute_with": "MODE",
+                "max_cat_safety": 200,
+                "hash_whole_categories": true,
+                "customHandlingCode": "",
+                "customProcessorWantsMatrix": false,
+                "nb_bins_hashing": 1048576,
+                "sendToInput": "main",
+                "state": {
+                    "userModified": false,
+                    "recordedMeaning": "Text",
+                    "autoModifiedByDSS": false
+                },
+                "role": "INPUT",
+                "max_nb_categories": 100,
+                "dummy_clip": "MAX_NB_CATEGORIES",
+                "missing_handling": "NONE",
+                "dummy_drop": "DROP",
+                "min_samples": 10,
+                "type": "CATEGORY",
+                "cumulative_proportion": 0.95,
+                "category_handling": "DUMMIFY"
+            },
+            "order_date_year_distinct": {
+                "generate_derivative": false,
+                "numerical_handling": "REGULAR",
+                "missing_impute_with": "MEAN",
+                "missing_handling": "IMPUTE",
+                "customHandlingCode": "",
+                "customProcessorWantsMatrix": false,
+                "sendToInput": "main",
+                "binarize_threshold_mode": "MEDIAN",
+                "state": {
+                    "userModified": false,
+                    "recordedMeaning": "LongMeaning",
+                    "autoModifiedByDSS": false
+                },
+                "role": "INPUT",
+                "binarize_constant_threshold": 0.0,
+                "quantile_bin_nb_bins": 4,
+                "rescaling": "AVGSTD",
+                "type": "NUMERIC",
+                "impute_constant_value": 0.0
+            },
+            "order_day_of_week_distinct": {
+                "generate_derivative": false,
+                "numerical_handling": "REGULAR",
+                "missing_impute_with": "MEAN",
+                "missing_handling": "IMPUTE",
+                "customHandlingCode": "",
+                "customProcessorWantsMatrix": false,
+                "sendToInput": "main",
+                "binarize_threshold_mode": "MEDIAN",
+                "state": {
+                    "userModified": false,
+                    "recordedMeaning": "DoubleMeaning",
+                    "autoModifiedByDSS": false
+                },
+                "role": "INPUT",
+                "binarize_constant_threshold": 0.0,
+                "quantile_bin_nb_bins": 4,
+                "rescaling": "AVGSTD",
+                "type": "NUMERIC",
+                "impute_constant_value": 0.0
+            },
+            "order_date_month_distinct": {
+                "missing_impute_with": "MODE",
+                "max_cat_safety": 200,
+                "hash_whole_categories": true,
+                "customHandlingCode": "",
+                "customProcessorWantsMatrix": false,
+                "nb_bins_hashing": 1048576,
+                "sendToInput": "main",
+                "state": {
+                    "userModified": false,
+                    "recordedMeaning": "Text",
+                    "autoModifiedByDSS": false
+                },
+                "role": "INPUT",
+                "max_nb_categories": 100,
+                "dummy_clip": "MAX_NB_CATEGORIES",
+                "missing_handling": "NONE",
+                "dummy_drop": "DROP",
+                "min_samples": 10,
+                "type": "CATEGORY",
+                "cumulative_proportion": 0.95,
+                "category_handling": "DUMMIFY"
+            },
+            "customer_id": {
+                "cumulative_proportion": 0.95,
+                "missing_impute_with": "MODE",
+                "autoReason": "REJECT_IDENTIFIER",
+                "hash_whole_categories": true,
+                "customHandlingCode": "",
+                "customProcessorWantsMatrix": false,
+                "nb_bins_hashing": 1048576,
+                "sendToInput": "main",
+                "state": {
+                    "userModified": false,
+                    "recordedMeaning": "Text",
+                    "autoModifiedByDSS": false
+                },
+                "role": "REJECT",
+                "max_nb_categories": 100,
+                "dummy_clip": "MAX_NB_CATEGORIES",
+                "missing_handling": "NONE",
+                "dummy_drop": "NONE",
+                "min_samples": 10,
+                "type": "CATEGORY",
+                "max_cat_safety": 200,
+                "category_handling": "DUMMIFY"
+            },
+            "pages_visited_avg": {
+                "generate_derivative": false,
+                "numerical_handling": "REGULAR",
+                "missing_impute_with": "MEAN",
+                "missing_handling": "IMPUTE",
+                "customHandlingCode": "",
+                "customProcessorWantsMatrix": false,
+                "sendToInput": "main",
+                "binarize_threshold_mode": "MEDIAN",
+                "state": {
+                    "userModified": false,
+                    "recordedMeaning": "DoubleMeaning",
+                    "autoModifiedByDSS": false
+                },
+                "role": "INPUT",
+                "binarize_constant_threshold": 0.0,
+                "quantile_bin_nb_bins": 4,
+                "rescaling": "AVGSTD",
+                "type": "NUMERIC",
+                "impute_constant_value": 0.0
+            }
+        },
+        "feature_generation": {
+            "manual_interactions": {
+                "interactions": []
+            },
+            "pairwise_linear": {
+                "behavior": "ENABLED_MANUAL"
+            },
+            "categoricals_count_transformer": {
+                "input_features": [],
+                "all_features": false,
+                "behavior": "DISABLED"
+            },
+            "polynomial_combinations": {
+                "behavior": "ENABLED_MANUAL"
+            },
+            "numericals_clustering": {
+                "k": 0,
+                "input_features": [],
+                "all_features": false,
+                "behavior": "DISABLED"
+            }
+        }
+    },
+    "envSelection": {
+        "envMode": "USE_BUILTIN_MODE"
+    },
+    "splitParams": {
+        "kfold": false,
+        "splitBeforePrepare": true,
+        "instanceIdRefresher": 0,
+        "ttPolicy": "SPLIT_SINGLE_DATASET",
+        "testOnLargerValues": true,
+        "ssdSplitMode": "RANDOM",
+        "ssdSelection": {
+            "targetRatio": 0.02,
+            "maxReadUncompressedBytes": -1,
+            "ordering": {
+                "rules": [],
+                "enabled": false
+            },
+            "latestPartitionsN": 1,
+            "filter": {
+                "distinct": false,
+                "enabled": false
+            },
+            "withinFirstN": -1,
+            "maxRecords": 100000,
+            "partitionSelectionMethod": "ALL",
+            "useMemTable": false,
+            "samplingMethod": "HEAD_SEQUENTIAL"
+        },
+        "subSamplingSeed": 1337,
+        "ssdSeed": 1337,
+        "nFolds": 5,
+        "ssdTrainingRatio": 0.8
+    },
+    "modeling": {
+        "metrics": {
+            "customEvaluationMetricGIB": true,
+            "customEvaluationMetricNeedsProba": false,
+            "thresholdOptimizationMetric": "F1",
+            "evaluationMetric": "ROC_AUC",
+            "costMatrixWeights": {
+                "fnGain": 0.0,
+                "tpGain": 1.0,
+                "fpGain": -0.3,
+                "tnGain": 0.0
+            },
+            "liftPoint": 0.4
+        },
+        "algorithm": "LOGISTIC_REGRESSION",
+        "logit_grid": {
+            "penalty": {
+                "values": {
+                    "l2": {
+                        "enabled": true
+                    },
+                    "l1": {
+                        "enabled": false
+                    }
+                }
+            },
+            "multi_class": "ovr",
+            "C": {
+                "limit": {
+                    "min": 1e-23
+                },
+                "randomMode": "RANGE",
+                "values": [
+                    0.01,
+                    0.1,
+                    1.0,
+                    10.0,
+                    100.0
+                ],
+                "range": {
+                    "scaling": "LOGARITHMIC",
+                    "max": 100.0,
+                    "nbValues": 3,
+                    "min": 0.01
+                },
+                "gridMode": "EXPLICIT"
+            },
+            "n_jobs": 2,
+            "enabled": true
+        },
+        "autoOptimizeThreshold": true,
+        "gridLength": 5,
+        "computeLearningCurves": false,
+        "forcedClassifierThreshold": 0.0,
+        "skipExpensiveReports": false,
+        "max_ensemble_nodes_serialized": 0,
+        "pluginAlgoCustomGridSearch": false,
+        "grid_search_params": {
+            "nIter": 0,
+            "nJobs": 4,
+            "nContainers": 4,
+            "distributed": false,
+            "nIterRandom": 5,
+            "bayesianOptimizer": "SCIKIT_OPTIMIZE",
+            "strategy": "GRID",
+            "randomized": true,
+            "shuffleIterations": 1,
+            "seed": 0,
+            "stratified": true,
+            "timeout": 0,
+            "cvSeed": 1337,
+            "splitRatio": 0.8,
+            "nFolds": 5,
+            "mode": "KFOLD",
+            "foldOffset": true
+        }
+    },
+    "core": {
+        "diagnosticsSettings": {
+            "enabled": true,
+            "settings": [
+                {
+                    "enabled": true,
+                    "type": "ML_DIAGNOSTICS_DATASET_SANITY_CHECKS"
+                },
+                {
+                    "enabled": true,
+                    "type": "ML_DIAGNOSTICS_MODELING_PARAMETERS"
+                },
+                {
+                    "enabled": true,
+                    "type": "ML_DIAGNOSTICS_RUNTIME"
+                },
+                {
+                    "enabled": true,
+                    "type": "ML_DIAGNOSTICS_TRAINING_OVERFIT"
+                },
+                {
+                    "enabled": true,
+                    "type": "ML_DIAGNOSTICS_LEAKAGE_DETECTION"
+                },
+                {
+                    "enabled": true,
+                    "type": "ML_DIAGNOSTICS_MODEL_CHECK"
+                },
+                {
+                    "enabled": true,
+                    "type": "ML_DIAGNOSTICS_ML_ASSERTIONS"
+                }
+            ]
+        },
+        "prediction_type": "BINARY_CLASSIFICATION",
+        "weight": {
+            "weightMethod": "CLASS_WEIGHT"
+        },
+        "calibration": {
+            "calibrationMethod": "NO_CALIBRATION"
+        },
+        "backendType": "PY_MEMORY",
+        "time": {
+            "enabled": false,
+            "ascending": true
+        },
+        "taskType": "PREDICTION",
+        "executionParams": {
+            "sparkCheckpoint": "NONE",
+            "containerSelection": {
+                "containerMode": "INHERIT"
+            },
+            "sparkParams": {
+                "sparkUseGlobalMetastore": false,
+                "sparkExecutionEngine": "SPARK_SUBMIT",
+                "sparkPreparedDFStorageLevel": "MEMORY_AND_DISK",
+                "pipelineAllowStart": true,
+                "pipelineAllowMerge": true,
+                "sparkConf": {
+                    "inheritConf": "default",
+                    "conf": []
+                },
+                "sparkRepartitionNonHDFS": 1
+            },
+            "envSelection": {
+                "envMode": "USE_BUILTIN_MODE"
+            }
+        },
+        "partitionedModel": {
+            "enabled": false,
+            "ssdSelection": {
+                "targetRatio": 0.02,
+                "maxReadUncompressedBytes": -1,
+                "ordering": {
+                    "rules": [],
+                    "enabled": false
+                },
+                "latestPartitionsN": 1,
+                "filter": {
+                    "distinct": false,
+                    "enabled": false
+                },
+                "withinFirstN": -1,
+                "maxRecords": -1,
+                "partitionSelectionMethod": "ALL",
+                "useMemTable": false,
+                "samplingMethod": "FULL"
+            }
+        },
+        "target_variable": "high_revenue"
+    },
+    "expectedPreparationOutputSchema": {
+        "userModified": false,
+        "columns": [
+            {
+                "type": "string",
+                "name": "customer_id"
+            },
+            {
+                "type": "bigint",
+                "name": "order_date_year_distinct"
+            },
+            {
+                "type": "string",
+                "name": "order_date_month_distinct"
+            },
+            {
+                "type": "double",
+                "name": "order_day_of_week_distinct"
+            },
+            {
+                "type": "double",
+                "name": "pages_visited_avg"
+            },
+            {
+                "type": "boolean",
+                "name": "high_revenue"
+            },
+            {
+                "type": "string",
+                "name": "gender"
+            },
+            {
+                "type": "bigint",
+                "name": "age_first_order"
+            },
+            {
+                "type": "string",
+                "name": "user_agent_brand"
+            },
+            {
+                "type": "string",
+                "name": "user_agent_os"
+            },
+            {
+                "type": "string",
+                "name": "user_agent_osversion"
+            },
+            {
+                "type": "string",
+                "name": "user_agent_osflavor"
+            },
+            {
+                "type": "string",
+                "name": "ip_address_geopoint"
+            },
+            {
+                "type": "string",
+                "name": "ip_address_city"
+            },
+            {
+                "type": "string",
+                "name": "ip_address_country"
+            },
+            {
+                "type": "boolean",
+                "name": "campaign"
+            }
+        ]
+    },
+    "operationMode": "TRAIN_SPLITTED_ONLY"
+}

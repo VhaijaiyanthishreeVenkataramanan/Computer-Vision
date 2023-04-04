@@ -1,0 +1,25 @@
+{
+  "tags": {
+    "deleted-recipe-editor": {
+      "color": "#90a8b7"
+    },
+    "within_dss:General Topics": {},
+    "downloads": {},
+    "imported": {
+      "color": "#263238"
+    },
+    "recipe-editor": {
+      "color": "#1ac2ab"
+    },
+    "creator:alex": {
+      "color": "#1ac2ab"
+    },
+    "tutorial": {
+      "color": "#FFC425"
+    },
+    "section:General Topics": {},
+    "creator:admin": {
+      "color": "#28aadd"
+    }
+  }
+}

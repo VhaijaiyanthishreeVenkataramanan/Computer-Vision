@@ -1,0 +1,94 @@
+{
+  "checklists": {
+    "checklists": []
+  }, 
+  "checks": {
+    "checks": [], 
+    "displayedState": {
+      "checks": [], 
+      "partition": "NP"
+    }, 
+    "runOnBuild": false
+  }, 
+  "creationTag": {
+    "lastModifiedBy": {
+      "login": "alex"
+    }, 
+    "lastModifiedOn": 1501606160638, 
+    "versionNumber": 0
+  }, 
+  "flowOptions": {
+    "crossProjectBuildBehavior": "DEFAULT", 
+    "rebuildBehavior": "NORMAL", 
+    "virtualizable": false
+  }, 
+  "metrics": {
+    "displayedState": {
+      "columns": [], 
+      "metrics": [
+        "basic:COUNT_FILES", 
+        "basic:SIZE"
+      ], 
+      "partition": "NP"
+    }, 
+    "engineConfig": {
+      "basic": {}, 
+      "dss": {
+        "active": true, 
+        "selection": {
+          "filter": {
+            "distinct": false, 
+            "enabled": false
+          }, 
+          "latestPartitionsN": 1, 
+          "maxReadUncompressedBytes": -1, 
+          "maxRecords": -1, 
+          "partitionSelectionMethod": "ALL", 
+          "samplingMethod": "FULL", 
+          "targetRatio": 0.02, 
+          "useMemTable": false, 
+          "withinFirstN": -1
+        }
+      }, 
+      "hive": {
+        "active": true, 
+        "extraConf": []
+      }, 
+      "impala": {
+        "active": true
+      }, 
+      "padRunsWithMetrics": false, 
+      "python": {}, 
+      "sql": {
+        "active": true
+      }
+    }, 
+    "probes": [
+      {
+        "computeOnBuildMode": "PARTITION", 
+        "configuration": {}, 
+        "enabled": true, 
+        "meta": {
+          "level": 0, 
+          "name": "Basic data"
+        }, 
+        "type": "basic"
+      }
+    ]
+  }, 
+  "name": "Customers", 
+  "params": {
+    "connection": "filesystem_folders", 
+    "path": "${projectKey}/${odbId}"
+  }, 
+  "path": "${env:DIP_HOME}/managed_folders/${projectKey}/${odbId}", 
+  "tags": [], 
+  "type": "Filesystem", 
+  "versionTag": {
+    "lastModifiedBy": {
+      "login": "alex"
+    }, 
+    "lastModifiedOn": 1501606160638, 
+    "versionNumber": 0
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "expression": "(diff(asDate(\"2017-03-01T00:00:00.000Z\"),val(\u0027order_date\u0027),\"days\") \u003c 30) \u0026\u0026 val(\u0027order_number\u0027) \u003d\u003d 1",
+  "enabled": true,
+  "uiData": {
+    "conditions": [
+      {
+        "num": 1,
+        "col": "pages_visited",
+        "input": "order_number",
+        "operator": "\u003d\u003d [number]"
+      },
+      {
+        "num": 0,
+        "input": "order_date",
+        "col": "order_date_year",
+        "operator": "contains"
+      }
+    ],
+    "mode": "CUSTOM"
+  },
+  "distinct": false
+}

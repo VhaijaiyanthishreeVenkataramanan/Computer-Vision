@@ -1,0 +1,90 @@
+{
+  "projectKey": "DKU_HAIKU",
+  "id": "REBUILDDATAANDRETRAINMODEL",
+  "type": "step_based",
+  "name": "Rebuild data and retrain model",
+  "active": false,
+  "versionTag": {
+    "versionNumber": 1,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1509549359455
+  },
+  "checklists": {
+    "checklists": []
+  },
+  "delayedTriggersBehavior": {
+    "delayWhileRunning": true,
+    "squashDelayedTriggers": true,
+    "suppressTriggersWhileRunning": true
+  },
+  "tags": [],
+  "triggers": [
+    {
+      "id": "AooKooAm",
+      "type": "ds_modified",
+      "name": "Customers or Orders",
+      "delay": 900,
+      "active": true,
+      "params": {
+        "watches": [
+          {
+            "type": "DATASET",
+            "itemId": "Customers",
+            "partitionsSpec": ""
+          },
+          {
+            "type": "DATASET",
+            "itemId": "Orders",
+            "partitionsSpec": ""
+          }
+        ]
+      },
+      "graceDelaySettings": {
+        "delay": 120,
+        "checkAgainAfterGraceDelay": true
+      }
+    }
+  ],
+  "reporters": [],
+  "params": {
+    "steps": [
+      {
+        "id": "build_0_true_d_Orders_filtered",
+        "type": "build_flowitem",
+        "name": "Filtered orders",
+        "params": {
+          "builds": [
+            {
+              "type": "DATASET",
+              "itemId": "Orders_filtered",
+              "partitionsSpec": ""
+            }
+          ],
+          "jobType": "RECURSIVE_BUILD",
+          "refreshHiveMetastore": true,
+          "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "build_0_true_m_Clj0CRAY",
+        "type": "build_flowitem",
+        "name": "High revenue prediction",
+        "params": {
+          "builds": [
+            {
+              "type": "SAVED_MODEL",
+              "itemId": "Clj0CRAY",
+              "partitionsSpec": ""
+            }
+          ],
+          "jobType": "RECURSIVE_BUILD",
+          "refreshHiveMetastore": true,
+          "proceedOnFailure": false
+        }
+      }
+    ]
+  },
+  "automationLocal": false
+}

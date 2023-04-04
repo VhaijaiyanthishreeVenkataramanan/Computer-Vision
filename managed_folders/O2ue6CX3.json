@@ -1,0 +1,94 @@
+{
+  "checklists": {
+    "checklists": []
+  }, 
+  "checks": {
+    "checks": [], 
+    "displayedState": {
+      "checks": [], 
+      "partition": "NP"
+    }, 
+    "runOnBuild": false
+  }, 
+  "creationTag": {
+    "lastModifiedBy": {
+      "login": "alex"
+    }, 
+    "lastModifiedOn": 1501605613539, 
+    "versionNumber": 0
+  }, 
+  "flowOptions": {
+    "crossProjectBuildBehavior": "DEFAULT", 
+    "rebuildBehavior": "NORMAL", 
+    "virtualizable": false
+  }, 
+  "metrics": {
+    "displayedState": {
+      "columns": [], 
+      "metrics": [
+        "basic:COUNT_FILES", 
+        "basic:SIZE"
+      ], 
+      "partition": "NP"
+    }, 
+    "engineConfig": {
+      "basic": {}, 
+      "dss": {
+        "active": true, 
+        "selection": {
+          "filter": {
+            "distinct": false, 
+            "enabled": false
+          }, 
+          "latestPartitionsN": 1, 
+          "maxReadUncompressedBytes": -1, 
+          "maxRecords": -1, 
+          "partitionSelectionMethod": "ALL", 
+          "samplingMethod": "FULL", 
+          "targetRatio": 0.02, 
+          "useMemTable": false, 
+          "withinFirstN": -1
+        }
+      }, 
+      "hive": {
+        "active": true, 
+        "extraConf": []
+      }, 
+      "impala": {
+        "active": true
+      }, 
+      "padRunsWithMetrics": false, 
+      "python": {}, 
+      "sql": {
+        "active": true
+      }
+    }, 
+    "probes": [
+      {
+        "computeOnBuildMode": "PARTITION", 
+        "configuration": {}, 
+        "enabled": true, 
+        "meta": {
+          "level": 0, 
+          "name": "Basic data"
+        }, 
+        "type": "basic"
+      }
+    ]
+  }, 
+  "name": "Orders", 
+  "params": {
+    "connection": "filesystem_folders", 
+    "path": "${projectKey}/O2ue6CX3"
+  }, 
+  "path": "${dip.home}/managed_folders/${projectKey}/O2ue6CX3", 
+  "tags": [], 
+  "type": "Filesystem", 
+  "versionTag": {
+    "lastModifiedBy": {
+      "login": "alex"
+    }, 
+    "lastModifiedOn": 1501605630617, 
+    "versionNumber": 1
+  }
+}

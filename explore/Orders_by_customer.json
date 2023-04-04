@@ -1,0 +1,227 @@
+{
+  "charts": [
+    {
+      "copySelectionFromScript": true,
+      "def": {
+        "animationDimension": [],
+        "animationFrameDuration": 3000,
+        "animationRepeat": true,
+        "axis1LogScale": false,
+        "axis2LogScale": false,
+        "boxplotBreakdownDim": [],
+        "boxplotValue": [],
+        "bubblesOptions": {
+          "defaultRadius": 5.0,
+          "singleShape": "FILLED_CIRCLE"
+        },
+        "chartHeight": 200,
+        "colorMeasure": [],
+        "colorOptions": {
+          "ccScaleMode": "NORMAL",
+          "colorPalette": "default",
+          "customPalette": {
+            "colors": [],
+            "fixedValues": false,
+            "id": "__dku_custom__",
+            "name": "Custom Palette",
+            "values": []
+          },
+          "numQuantizeSteps": 5,
+          "paletteMiddleValue": 0.0,
+          "paletteType": "CONTINUOUS",
+          "quantizationMode": "NONE",
+          "singleColor": "#2678B1",
+          "transparency": 0.75
+        },
+        "disableSafetyLimits": false,
+        "facetDimension": [],
+        "fillOpacity": 0.6,
+        "filters": [
+          {
+            "allValuesInSample": false,
+            "column": "age_first_order",
+            "columnType": "NUMERICAL",
+            "excludeOtherValues": false,
+            "excludedValues": {},
+            "explicitExclude": false,
+            "filterType": "NUMERICAL_FACET",
+            "isA": "filter",
+            "minValue": 31.3844
+          },
+          {
+            "allValuesInSample": false,
+            "column": "gender",
+            "columnType": "ALPHANUM",
+            "excludeOtherValues": false,
+            "excludedValues": {},
+            "explicitExclude": false,
+            "filterType": "ALPHANUM_FACET",
+            "isA": "filter"
+          },
+          {
+            "allValuesInSample": false,
+            "column": "gender",
+            "columnType": "ALPHANUM",
+            "excludeOtherValues": false,
+            "excludedValues": {},
+            "explicitExclude": false,
+            "filterType": "ALPHANUM_FACET",
+            "isA": "filter"
+          }
+        ],
+        "genericDimension0": [
+          {
+            "column": "age_first_order",
+            "filters": [],
+            "generateOthersCategory": true,
+            "isA": "dimension",
+            "maxValues": 100,
+            "numParams": {
+              "binSize": 100,
+              "emptyBinsMode": "ZEROS",
+              "mode": "FIXED_NB",
+              "nbBins": 10
+            },
+            "oneTickPerBin": false,
+            "possibleSorts": [
+              {
+                "label": "Natural ordering",
+                "sortAscending": true,
+                "type": "NATURAL"
+              },
+              {
+                "label": "Average of total_sum, descending",
+                "measureIdx": 0,
+                "type": "AGGREGATION"
+              },
+              {
+                "label": "Average of total_sum, ascending",
+                "measureIdx": 0,
+                "sortAscending": true,
+                "type": "AGGREGATION"
+              }
+            ],
+            "sort": {
+              "label": "Natural ordering",
+              "sortAscending": true,
+              "type": "NATURAL"
+            },
+            "type": "NUMERICAL"
+          }
+        ],
+        "genericDimension1": [],
+        "genericMeasures": [
+          {
+            "column": "total_sum",
+            "computeMode": "NORMAL",
+            "computeModeDim": 0,
+            "displayAxis": "axis1",
+            "displayType": "column",
+            "displayed": true,
+            "function": "AVG",
+            "isA": "measure",
+            "type": "NUMERICAL"
+          }
+        ],
+        "geometry": [],
+        "groupDimension": [],
+        "hexbinNumber": 20,
+        "hexbinRadius": 20,
+        "hexbinRadiusMode": "NUM_HEXAGONS",
+        "includeZero": true,
+        "legendPlacement": "OUTER_RIGHT",
+        "mapGridOptions": {
+          "gridLatDeg": 0.5,
+          "gridLonDeg": 0.5
+        },
+        "mapOptions": {
+          "lockSquareGrid": false,
+          "tilesLayer": "cartodb-positron"
+        },
+        "multiTooltips": false,
+        "name": "Avg. of total_sum by age_first_order",
+        "pieOptions": {
+          "donutHoleSize": 54.0
+        },
+        "scatterOptions": {
+          "equalScales": false,
+          "identityLine": false
+        },
+        "showInChartLabels": true,
+        "showInChartValues": false,
+        "showLegend": true,
+        "showXAxis": false,
+        "showXAxisLabel": true,
+        "showYAxisLabel": true,
+        "singleXAxis": true,
+        "sizeMeasure": [],
+        "smoothing": true,
+        "strokeWidth": 1,
+        "thumbnailData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAABSUlEQVRoQ2NkGGGAcTD4V758y35kdzzs9HGklbtGPUyrkMVnLrYYplWs0zWGcXmCFA+jqmX8/7DT24mUwBnSHv7PwPj5Uae336iH8RR6NIth8pMpAwOolCYm+Q+qGB71MJGxBirNB3UMa9Xv5/n64+tmeLXznyHrYZfP9WEbw+geZvr/N+N+l//NUQ8P1yQ9GsPQzE1sQTSoCi1s+XJY5+FRD3f6OI7G8HCqlkaT9GiSZmAYsvUwsU3DwVpoKVRsSfv/nyES1saHDQzi7A+PehhHW3g0hgdJtTSapKHjXKN5GFaqjRZao4UWZLBttJQeLaUhpQK9RzxGq6XRagltAtc4bSYrstDZWem/sYkxMDAwGqfNZIGpPTsz7Q8DI+N/EvQz0ERt6CpmY8H3THB3zUr/DWLTbDJtICbWibFz1MPEhNJQVjPiYhgAXcMedFkZgjQAAAAASUVORK5CYII=",
+        "tooltipMeasures": [],
+        "type": "grouped_columns",
+        "uaColor": [],
+        "uaShape": [],
+        "uaSize": [],
+        "uaTooltip": [],
+        "uaXDimension": [],
+        "uaYDimension": [],
+        "useLiveProcessingIfAvailable": true,
+        "userEditedName": false,
+        "variant": "normal",
+        "xAxisMode": "NORMAL",
+        "xDimension": [],
+        "xMeasure": [],
+        "yAxisMode": "NORMAL",
+        "yDimension": [],
+        "yMeasure": []
+      },
+      "engineType": "LINO",
+      "maxDataBytes": 157286400
+    }
+  ],
+  "script": {
+    "analysisColumnData": {},
+    "coloring": {
+      "individualColumns": [],
+      "scheme": "MEANING_AND_STATUS",
+      "valueColoringMode": "HASH"
+    },
+    "columnsSelection": {
+      "mode": "ALL"
+    },
+    "explorationFilters": [],
+    "explorationSampling": {
+      "_refreshTrigger": 0,
+      "autoRefreshSample": false,
+      "selection": {
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "latestPartitionsN": 1,
+        "maxReadUncompressedBytes": -1,
+        "maxRecords": 10000,
+        "maxStoredBytes": 104857600,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "partitionSelectionMethod": "ALL",
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "targetRatio": 0.02,
+        "withinFirstN": -1
+      }
+    },
+    "exploreUIParams": {},
+    "globalSearchQuery": "",
+    "maxProcessedMemTableBytes": -1,
+    "previewMode": "ALL_ROWS",
+    "sorting": [],
+    "steps": [],
+    "vizSampling": {
+      "_refreshTrigger": 0,
+      "autoRefreshSample": false
+    }
+  }
+}

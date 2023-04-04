@@ -1,0 +1,322 @@
+{
+  "checklists": {
+    "checklists": []
+  },
+  "creationTag": {
+    "lastModifiedBy": {
+      "login": "alex"
+    },
+    "lastModifiedOn": 1498738782038,
+    "versionNumber": 0
+  },
+  "customFields": {},
+  "listed": true,
+  "name": "Analytic dashboard",
+  "owner": "alex",
+  "pages": [
+    {
+      "grid": {
+        "tiles": [
+          {
+            "autoLoad": true,
+            "box": {
+              "height": 4,
+              "left": 0,
+              "top": 0,
+              "width": 5
+            },
+            "clickAction": "OPEN_INSIGHT",
+            "displayMode": "INSIGHT",
+            "insightId": "jXFM3ys",
+            "insightType": "chart",
+            "resizeImageMode": "ORIG_SIZE",
+            "showTitle": "YES",
+            "tileParams": {
+              "autoPlayAnimation": true,
+              "showLegend": true,
+              "showTooltips": true,
+              "showXAxis": true,
+              "showYAxis": true
+            },
+            "tileType": "INSIGHT",
+            "title": "Customers by country"
+          },
+          {
+            "autoLoad": true,
+            "box": {
+              "height": 4,
+              "left": 0,
+              "top": 4,
+              "width": 5
+            },
+            "clickAction": "OPEN_INSIGHT",
+            "displayMode": "INSIGHT",
+            "insightId": "j8Bi4OZ",
+            "insightType": "chart",
+            "resizeImageMode": "ORIG_SIZE",
+            "showTitle": "YES",
+            "tileParams": {
+              "autoPlayAnimation": true,
+              "showLegend": false,
+              "showTooltips": true,
+              "showXAxis": true,
+              "showYAxis": true
+            },
+            "tileType": "INSIGHT",
+            "title": "Total revenue by campaign and gender"
+          },
+          {
+            "autoLoad": true,
+            "box": {
+              "height": 8,
+              "left": 5,
+              "top": 0,
+              "width": 7
+            },
+            "clickAction": "OPEN_INSIGHT",
+            "displayMode": "INSIGHT",
+            "insightId": "ZVdy4Hk",
+            "insightType": "chart",
+            "resizeImageMode": "ORIG_SIZE",
+            "showTitle": "YES",
+            "tileParams": {
+              "autoPlayAnimation": true,
+              "showLegend": false,
+              "showTooltips": true,
+              "showXAxis": true,
+              "showYAxis": true
+            },
+            "tileType": "INSIGHT"
+          }
+        ]
+      },
+      "id": "ubwBh84",
+      "showTitle": false,
+      "title": "Understanding your customers"
+    },
+    {
+      "grid": {
+        "tiles": [
+          {
+            "autoLoad": true,
+            "box": {
+              "height": 4,
+              "left": 0,
+              "top": 0,
+              "width": 6
+            },
+            "clickAction": "DO_NOTHING",
+            "displayMode": "INSIGHT",
+            "insightId": "xpcvHcc",
+            "insightType": "saved-model_report",
+            "resizeImageMode": "FIT_SIZE",
+            "showTitle": "YES",
+            "tileParams": {
+              "advancedOptions": {
+                "interactiveScoring": {
+                  "featuresOrder": [
+                    "order_date_year_distinct",
+                    "pages_visited_avg",
+                    "order_day_of_week_distinct",
+                    "age_first_order",
+                    "order_date_month_distinct",
+                    "user_agent_osversion",
+                    "user_agent_osflavor",
+                    "user_agent_brand",
+                    "ip_address_country",
+                    "gender",
+                    "user_agent_os",
+                    "ip_address_geopoint",
+                    "ip_address_city",
+                    "campaign",
+                    "customer_id",
+                    "total_sum",
+                    "dataset",
+                    "count"
+                  ]
+                }
+              },
+              "displayMode": "summary"
+            },
+            "tileType": "INSIGHT"
+          },
+          {
+            "autoLoad": true,
+            "box": {
+              "height": 12,
+              "left": 6,
+              "top": 0,
+              "width": 6
+            },
+            "clickAction": "DO_NOTHING",
+            "displayMode": "INSIGHT",
+            "insightId": "cJ57G00",
+            "insightType": "saved-model_report",
+            "resizeImageMode": "FIT_SIZE",
+            "showTitle": "YES",
+            "tileParams": {
+              "advancedOptions": {
+                "interactiveScoring": {
+                  "featuresOrder": [
+                    "order_date_year_distinct",
+                    "pages_visited_avg",
+                    "order_day_of_week_distinct",
+                    "age_first_order",
+                    "order_date_month_distinct",
+                    "user_agent_osversion",
+                    "user_agent_osflavor",
+                    "user_agent_brand",
+                    "ip_address_country",
+                    "gender",
+                    "user_agent_os",
+                    "ip_address_geopoint",
+                    "ip_address_city",
+                    "campaign",
+                    "customer_id",
+                    "total_sum",
+                    "dataset",
+                    "count"
+                  ]
+                }
+              },
+              "displayMode": "bc_confusion"
+            },
+            "tileType": "INSIGHT"
+          },
+          {
+            "autoLoad": true,
+            "box": {
+              "height": 4,
+              "left": 0,
+              "top": 4,
+              "width": 6
+            },
+            "clickAction": "DO_NOTHING",
+            "displayMode": "INSIGHT",
+            "insightId": "rv9RTia",
+            "insightType": "saved-model_report",
+            "resizeImageMode": "FIT_SIZE",
+            "showTitle": "YES",
+            "tileParams": {
+              "advancedOptions": {
+                "interactiveScoring": {
+                  "featuresOrder": [
+                    "order_date_year_distinct",
+                    "pages_visited_avg",
+                    "order_day_of_week_distinct",
+                    "age_first_order",
+                    "order_date_month_distinct",
+                    "user_agent_osversion",
+                    "user_agent_osflavor",
+                    "user_agent_brand",
+                    "ip_address_country",
+                    "gender",
+                    "user_agent_os",
+                    "ip_address_geopoint",
+                    "ip_address_city",
+                    "campaign",
+                    "customer_id",
+                    "total_sum",
+                    "dataset",
+                    "count"
+                  ]
+                }
+              },
+              "displayMode": "bc_decision_chart"
+            },
+            "tileType": "INSIGHT"
+          }
+        ]
+      },
+      "id": "xNdKfpc",
+      "showTitle": false,
+      "title": "Predictive model summary"
+    },
+    {
+      "grid": {
+        "tiles": [
+          {
+            "autoLoad": true,
+            "box": {
+              "height": 8,
+              "left": 0,
+              "top": 0,
+              "width": 11
+            },
+            "clickAction": "DO_NOTHING",
+            "displayMode": "INSIGHT",
+            "insightId": "fJrqMRS",
+            "insightType": "saved-model_report",
+            "resizeImageMode": "FIT_SIZE",
+            "showTitle": "YES",
+            "tileParams": {
+              "advancedOptions": {
+                "interactiveScoring": {
+                  "featuresOrder": [
+                    "order_date_year_distinct",
+                    "pages_visited_avg",
+                    "order_day_of_week_distinct",
+                    "age_first_order",
+                    "order_date_month_distinct",
+                    "user_agent_osversion",
+                    "user_agent_osflavor",
+                    "user_agent_brand",
+                    "ip_address_country",
+                    "gender",
+                    "user_agent_os",
+                    "ip_address_geopoint",
+                    "ip_address_city",
+                    "campaign",
+                    "customer_id",
+                    "total_sum",
+                    "dataset",
+                    "count"
+                  ]
+                }
+              },
+              "displayMode": "interactive_scoring"
+            },
+            "tileType": "INSIGHT"
+          },
+          {
+            "autoLoad": true,
+            "box": {
+              "height": 4,
+              "left": 0,
+              "top": 8,
+              "width": 11
+            },
+            "clickAction": "OPEN_INSIGHT",
+            "displayMode": "INSIGHT",
+            "insightId": "cHHNtEx",
+            "insightType": "dataset_table",
+            "resizeImageMode": "FIT_SIZE",
+            "showTitle": "YES",
+            "tileParams": {
+              "showCustomFields": true,
+              "showDescription": true,
+              "showMeaning": false,
+              "showName": true,
+              "showProgressBar": false,
+              "showStorageType": false,
+              "viewKind": "EXPLORE"
+            },
+            "tileType": "INSIGHT"
+          }
+        ]
+      },
+      "id": "aVdpvDO",
+      "showTitle": false,
+      "title": "What-If Analysis"
+    }
+  ],
+  "showGrid": true,
+  "tags": [],
+  "versionTag": {
+    "lastModifiedBy": {
+      "login": "alex"
+    },
+    "lastModifiedOn": 1616709417108,
+    "versionNumber": 86
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "web_app",
+  "params": {
+    "webAppSmartId": "W0fIXdJ",
+    "webAppType": "SHINY"
+  },
+  "owner": "admin",
+  "listed": false,
+  "name": "Order total by Customer age",
+  "dashboardCreationId": "E68E1sA",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1510250437220
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1510250437220
+  },
+  "tags": [],
+  "checklists": {
+    "checklists": []
+  }
+}

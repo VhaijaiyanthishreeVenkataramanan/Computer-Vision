@@ -1,0 +1,28 @@
+{
+  "type": "saved-model_report",
+  "params": {
+    "savedModelSmartId": "Clj0CRAY"
+  },
+  "owner": "admin",
+  "listed": false,
+  "name": "High revenue prediction table",
+  "dashboardCreationId": "E68E1sA",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1509556683500
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1509556683500
+  },
+  "tags": [],
+  "checklists": {
+    "checklists": []
+  }
+}
